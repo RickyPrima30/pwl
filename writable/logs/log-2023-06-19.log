@@ -126,3 +126,7 @@ INFO - 2023-06-19 12:00:18 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-06-19 12:00:18 --> Cart Class Initialized
 INFO - 2023-06-19 12:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-06-19 12:00:18 --> Cart Class Initialized
+INFO - 2023-06-19 12:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-19 12:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-19 12:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-19 12:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

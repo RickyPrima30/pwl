@@ -8,7 +8,7 @@
     {
         protected $cart;
         private $url = "https://api.rajaongkir.com/starter/";
-		private $apiKey = "9f3d236f98c23991b28accdba17a6d6c";
+		private $apiKey = "77e49b9969eae0fb5407864e4cf4b5fc";
 
         function __construct()
         {
@@ -70,7 +70,6 @@
             $data['items'] = $this->cart->contents();
             $data['total'] = $this->cart->total();
             $provinsi = $this->rajaongkir('province');
-            $data['provinsi'] = json_decode($provinsi)->rajaongkir->results;
             $data['provinsi'] = json_decode($provinsi)->rajaongkir->results;
 
             return view('pages/checkout_view', $data);

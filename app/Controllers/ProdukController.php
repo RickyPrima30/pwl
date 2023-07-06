@@ -1,20 +1,18 @@
 <?php
 
-namespace App\Controllers;
+		namespace App\Controllers;
+		use App\Models\ProdukModel;
 
-use App\Models\ProdukModel;
+		class ProdukController extends BaseController
+		{
+			protected $produk;
 
-class ProdukController extends BaseController
-{
-    protected $produk;
-    protected $validator;
-
-    public function __construct()
-    {
-        helper('form');
-        $this->validator = \Config\Services::validation();
-        $this->produk = new ProdukModel();
-    }
+			function __construct()
+			{
+				helper('form');
+				$this->validation = \Config\Services::validation();
+				$this->produk = new ProdukModel();
+			}
 
 			public function index()
 			{
@@ -25,8 +23,8 @@ class ProdukController extends BaseController
 			public function create()
 			{
 				$data = $this->request->getPost();
-				$validate = $this->validator->run($data, 'barang');
-				$errors = $this->validator->getErrors();
+				$validate = $this->validation->run($data, 'barang');
+				$errors = $this->validation->getErrors();
 
 				if(!$errors){
 					$dataForm = [ 
@@ -55,8 +53,8 @@ class ProdukController extends BaseController
 			public function edit($id)
 			{
 				$data = $this->request->getPost();
-				$validate = $this->validator->run($data, 'barang');
-				$errors = $this->validator->getErrors();
+				$validate = $this->validation->run($data, 'barang');
+				$errors = $this->validation->getErrors();
 
 				if(!$errors){
 					$dataForm = [

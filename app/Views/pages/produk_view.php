@@ -32,7 +32,7 @@ Tambah Data
 	<th scope="col">Harga</th>
 	<th scope="col">Jumlah</th> 
 	<th scope="col">Foto</th> 
-	<th scope="col"></th> 
+	<th scope="col">Aksi</th> 
 	</tr>
 </thead>
 <tbody>

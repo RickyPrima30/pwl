@@ -39,60 +39,39 @@ class Validation extends BaseConfig
     ];
 
     // --------------------------------------------------------------------
-    // Rules
-    // --------------------------------------------------------------------
-    public $barang = [
-        'nama' => [
-            'rules' => 'required|min_length[5]',
-        ],
-        'harga' => [
-            'rules' => 'required|integer',
-        ],
-        'jumlah'=>[
-            'rules' => 'required|integer',
-        ],
-    ];
-    
-    public $barang_errors = [
-        'nama' => [
-            'required' =>'{field} Harus Diisi<br>',
-            'min_length' => '{field} Minimal 5 Karakter<br>',
-        ],
-        'harga' => [
-            'required' => '{field} Harus Diisi<br>',
-            'integer' => '{field} Harus Angka<br>'
-        ],
-        'jumlah'=>[
-            'required' => '{field} Harus Diisi<br>',
-            'integer' => '{field} Harus Angka<br>'
-        ],
-    ];
-    
-    // @TODO: check
-    public $user = [
-        // 'nama' => [
-        //     'rules' => 'required|min_length[5]',
-        // ],
-        // 'harga' => [
-        //     'rules' => 'required|integer',
-        // ],
-        // 'jumlah'=>[
-        //     'rules' => 'required|integer',
-        // ],
-    ];
-    
-    public $user_errors = [
-        // 'nama' => [
-        //     'required' =>'{field} Harus Diisi<br>',
-        //     'min_length' => '{field} Minimal 5 Karakter<br>',
-        // ],
-        // 'harga' => [
-        //     'required' => '{field} Harus Diisi<br>',
-        //     'integer' => '{field} Harus Angka<br>'
-        // ],
-        // 'jumlah'=>[
-        //     'required' => '{field} Harus Diisi<br>',
-        //     'integer' => '{field} Harus Angka<br>'
-        // ],
-    ];
+// Rules
+// --------------------------------------------------------------------
+
+public $barang = [
+    'nama' => [
+        'rules' => 'required|min_length[5]',
+    ],
+    'harga' => [
+        'rules' => 'required|integer',
+    ],
+    'jumlah'=>[
+        'rules' => 'required|integer',
+    ],
+];
+
+public $barang_errors = [
+    'nama' => [
+        'required' =>'{field} Harus Diisi<br>',
+        'min_length' => '{field} Minimal 5 Karakter<br>',
+    ],
+    'harga' => [
+        'required' => '{field} Harus Diisi<br>',
+        'integer' => '{field} Harus Angka<br>'
+    ],
+    'jumlah'=>[
+        'required' => '{field} Harus Diisi<br>',
+        'integer' => '{field} Harus Angka<br>'
+    ],
+];
+public $user =[
+    'username'=>[
+        'rules'=>'required|min_lenght[5]',
+    ],
+    'password'
+];
 }

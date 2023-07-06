@@ -22,24 +22,24 @@ $routes->set404Override();
 // $routes->setAutoRoute(false);
 
 /*
+/*
+/*
+/*
+/*
  * --------------------------------------------------------------------
  * Route Definitions
  * --------------------------------------------------------------------
  */
 
-$routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
-$routes->setDefaultMethod('index');
-$routes->setTranslateURIDashes(false);
-$routes->set404Override();
-
-$routes->get('/', 'Home::index', ['filter'=>'auth']);
-
+//Authentification Routes
+$routes->get('/', 'Home::index', ['filter' => 'auth']);
 $routes->get('/login', 'AuthController::login');
-$routes->add('/login', 'AuthController::login');
-$routes->add('/register', 'AuthController::register');
+$routes->add('/login', 'AuthController::login'); 
 $routes->get('/logout', 'AuthController::logout');
+$routes->get('/register', 'AuthController::register');
+$routes->add('/register', 'AuthController::register');
 
+//Transaksi Routes
 $routes->get('/keranjang', 'TransaksiController::cart_show', ['filter' => 'auth']);
 $routes->add('/keranjang', 'TransaksiController::cart_add', ['filter' => 'auth']);
 $routes->add('/keranjang/edit', 'TransaksiController::cart_edit', ['filter' => 'auth']);
@@ -50,29 +50,26 @@ $routes->get('/keranjang/getcost', 'TransaksiController::getcost', ['filter' => 
 $routes->add('/keranjang/buy', 'TransaksiController::buy', ['filter' => 'auth']);
 $routes->add('/keranjang/checkout', 'TransaksiController::checkout', ['filter' => 'auth']);
 
+//Produk Routes
 $routes->get('/produk', 'ProdukController::index', ['filter' => 'auth']);
 $routes->add('/produk', 'ProdukController::create', ['filter' => 'auth']);
 $routes->add('/produk/edit/(:any)', 'ProdukController::edit/$1', ['filter' => 'auth']);
 $routes->get('/produk/delete/(:any)', 'ProdukController::delete/$1', ['filter' => 'auth']);
-$routes->get('/keranjang', 'TransaksiController::cart_show', ['filter' => 'auth']);
-$routes->add('/keranjang', 'TransaksiController::cart_add', ['filter' => 'auth']);
-$routes->add('/keranjang/edit', 'TransaksiController::cart_edit', ['filter' => 'auth']);
-$routes->add('/keranjang/delete/(:any)', 'TransaksiController::cart_delete/$1', ['filter' => 'auth']);
-$routes->add('/keranjang/clear', 'TransaksiController::cart_clear', ['filter' => 'auth']);
+//Admin Routes
 
-$routes->get('/produk', 'ProdukController::index', ['filter' => 'auth']);
-$routes->add('/produk', 'ProdukController::create', ['filter' => 'auth']);
-$routes->add('/produk/edit/(:any)', 'ProdukController::edit/$1', ['filter' => 'auth']);
-$routes->get('/produk/delete/(:any)', 'ProdukController::delete/$1', ['filter' => 'auth']);
+$routes->get('/admin', 'AdminController::index', ['filter' => 'auth']);
+$routes->add('/admin', 'AdminController::create', ['filter' => 'auth']);
+$routes->add('/admin/edit/(:any)', 'AdminController::edit/$1', ['filter' => 'auth']);
+$routes->get('/admin/delete/(:any)', 'AdminController::delete/$1', ['filter' => 'auth']);
 
-$routes->get('/users', 'UserController::index', ['filter' => 'auth']);
-$routes->add('/users', 'UserController::create', ['filter' => 'auth']);
-$routes->add('/users/edit/(:any)', 'UserController::edit/$1', ['filter' => 'auth']);
-$routes->get('/users/delete/(:any)', 'UserController::delete/$1', ['filter' => 'auth']);
+//pesanan routes
+$routes->get('/pesanan', 'PesananController::index', ['filter' => 'auth']);
+$routes->add('/pesanan/edit/(:any)', 'PesananController::edit/$1', ['filter' => 'auth']);
+$routes->get('/pesanan/delete/(:any)', 'PesananController::delete/$1', ['filter' => 'auth']);
 
 
-/*
- * --------------------------------------------------------------------
+
+/* --------------------------------------------------------------------
  * Additional Routing
  * --------------------------------------------------------------------
  *
